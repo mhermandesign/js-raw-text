@@ -25,7 +25,7 @@ function sanitize(rawData) {
         return arrayItem.length > 0;
     });
 
-mergeSort(droppedEmpties); // Line 31
+    mergeSort(droppedEmpties);
 }
   
 // Sort cities lived in for each person
@@ -41,7 +41,6 @@ function mergeSort(a) {
     const people = [];
 
     a.forEach(person => {
-        
         // If the entry is likely to be a person...
         if (person.length > 1) {
             
@@ -56,31 +55,30 @@ function mergeSort(a) {
         } else { // ...Else assume it's a city and push to the previous person.
             people[people.length-1].city.push(person[0]);
         }
-        
     });
 
     render(people);
 }
 
-function createBlock(people) {
-    people.forEach((person) => {
-        const newBlock = document.createElement('div');
-        newBlock.classList.add('block');
-        const firstName = person.firstName;
-        const lastName = person.lastName;
-        const gender = person.gender;
-        const cities = person.city;
-        const birthday = person.birthday;
-        const fullName = `<h2>${firstName} ${lastName}</h2>`;
-        const personalInfo = `<p>Gender: ${gender} | Birthday: ${birthday}</p>`;
-        const citiesLived = `<p>${firstName} has lived in ${cities.map((city) => city = ` ${city}`).toString()}</p>`
-        newBlock.innerHTML += fullName + personalInfo + citiesLived;
-        document.getElementById('output').appendChild(newBlock);
-    })
+function createBlock(person) {
+    const newBlock = document.createElement('div');
+    newBlock.classList.add('block');
+    const firstName = person.firstName;
+    const lastName = person.lastName;
+    const gender = person.gender;
+    const cities = person.city;
+    const birthday = person.birthday;
+    const fullName = `<h2>${firstName} ${lastName}</h2>`;
+    const personalInfo = `<p>Gender: ${gender} | Birthday: ${birthday}</p>`;
+    const citiesLived = `<p>${firstName} has lived in ${cities.map((city) => city = ` ${city}`).toString()}</p>`
+    newBlock.innerHTML += fullName + personalInfo + citiesLived;
+    document.getElementById('output').appendChild(newBlock);
 }
 
 function render(people) {
-    createBlock(people);
+    people.forEach((person) => {
+        createBlock(person);
+    })
 }
 
 // Get form submission
@@ -88,6 +86,5 @@ document.getElementById("my-form").addEventListener("submit", function(e) {
     e.preventDefault();
     const textarea = document.getElementById("my-textarea");
     const rawData = textarea.value;
-    sanitize(rawData); // Line 1
+    sanitize(rawData);
 });
-  
