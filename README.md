@@ -1,4 +1,4 @@
-# js-raw-text
+# raw-excel-cleaner
 
 http://mattherman.design/js-raw-text/
 
