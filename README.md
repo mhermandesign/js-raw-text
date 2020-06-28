@@ -1,6 +1,6 @@
 # raw-excel-cleaner
 
-http://mattherman.design/js-raw-text/
+https://mhermandesign.github.io/js-raw-text/
 
 ---
 
