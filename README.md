@@ -20,7 +20,3 @@ Hands down, the most difficult thing for me to wrap my head around was how to ad
 Finally, after what felt like a week of searching through forums and guides, I was able to get an answer on [StackOverflow](https://stackoverflow.com/questions/59202957/how-do-i-access-a-variable-created-outside-of-an-if-else-scope-update-it-in-th) where someone was kind enough to point out that I only needed to find the length of the {People} object that I was pushing each person to.
 
 As far as sanitization of text goes, that process seemed to click fairly easily. I was able to work through array prototype methods like `find()`, `filter()`, and `map()`, which have been unbelievably useful in nearly every project I've worked on.
-
-## Next Steps
-
-Due to how much time I'd spent simply getting the basic funcionality to happen, I ran out of time to add things like styling and the ability to input multiple types of information. I aim to include both of those things, as well as expand into different types of output based on the kind of data being given.
